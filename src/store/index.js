@@ -34,7 +34,7 @@ export default new Vuex.Store({
 
 
      state.todos[index] = updatedTodo
-     console.log("xzxz", state.todos[index]);
+   
     //  state.todos.push(index)
     //  state.todos = [...updatedTodo]
      
@@ -53,7 +53,7 @@ export default new Vuex.Store({
         `https://jsonplaceholder.typicode.com/todos/${id}`
       );
       this.todo = response.data;
-      console.log("hhh", this.todo);
+    
       commit("setTodo", response.data);
     },
 

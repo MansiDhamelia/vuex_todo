@@ -21,7 +21,6 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      value: $store.state.todo.title,
       id: this.$route.params.id,
     };
   },
@@ -32,7 +31,6 @@ export default {
     ...mapActions(["addTodo", "fetchData", "fetchTodo", "updateData"]),
 
     onSubmit() {
-     
       if (this.$route.name == "todo.create") {
         this.addTodo(this.todo);
         this.$router.push("/todos").catch(() => {});
@@ -43,10 +41,6 @@ export default {
         };
         this.updateData(updatedTodo);
         this.$router.push("/todos").catch(() => {});
-
-        // this.updateData(this.id);
-        // console.log("id:", this.id);
-        // this.$router.push("/todos").catch(() => {});
       }
     },
   },
